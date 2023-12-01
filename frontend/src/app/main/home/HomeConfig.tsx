@@ -1,10 +1,10 @@
 import i18next from 'i18next';
 import { lazy } from 'react';
 import en from './i18n/en';
-import tr from './i18n/es';
+import es from './i18n/es';
 
 i18next.addResourceBundle('en', 'homePage', en);
-i18next.addResourceBundle('tr', 'homePage', tr);
+i18next.addResourceBundle('es', 'homePage', es);
 
 const Home = lazy(() => import('./Home'));
 

@@ -1,5 +1,5 @@
 const locale = {
-	TITLE: 'P&aacute;gina principal'
+	TITLE: 'Property'
 };
 
 export default locale;

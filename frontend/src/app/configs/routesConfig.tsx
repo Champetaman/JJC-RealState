@@ -10,8 +10,10 @@ import Error404Page from '../main/404/Error404Page';
 import ExampleConfig from '../main/example/ExampleConfig';
 import HomeConfig from '../main/home/HomeConfig';
 import PagesConfigs from '../main/pages/pagesConfigs';
+import PropertyConfig from '../main/propiedad/PropertyConfig';
 
 const routeConfigs: FuseRouteConfigsType = [
+	PropertyConfig,
 	ExampleConfig,
 	HomeConfig,
 	SignOutConfig,
@@ -26,12 +28,17 @@ const routeConfigs: FuseRouteConfigsType = [
 const routes: FuseRoutesType = [
 	...FuseUtils.generateRoutesFromConfigs(routeConfigs, settingsConfig.defaultAuth),
 	{
+		path: '/buy',
+		element: <Navigate to="/property" />,
+		auth: settingsConfig.defaultAuth
+	},
+	{
 		path: '/',
 		element: <Navigate to="/example" />,
 		auth: settingsConfig.defaultAuth
 	},
 	{
-		path: '/',
+		path: '/home',
 		element: <Navigate to="/home" />,
 		auth: settingsConfig.defaultAuth
 	},

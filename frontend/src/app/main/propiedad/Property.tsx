@@ -1,8 +1,8 @@
 import { useTranslation } from 'react-i18next';
 import { styled } from '@mui/material/styles';
-import FusePageSimple from '@fuse/core/FusePageSimple';
+import FusePageCarded from '@fuse/core/FusePageCarded';
 
-const Root = styled(FusePageSimple)(({ theme }) => ({
+const Root = styled(FusePageCarded)(({ theme }) => ({
 	'& .FusePageSimple-header': {
 		backgroundColor: theme.palette.background.paper,
 		borderBottomWidth: 1,
@@ -14,8 +14,8 @@ const Root = styled(FusePageSimple)(({ theme }) => ({
 	'& .FusePageSimple-sidebarContent': {}
 }));
 
-function Home() {
-	const { t } = useTranslation('homePage');
+function Property() {
+	const { t } = useTranslation('propertyPage');
 
 	return (
 		<Root
@@ -26,13 +26,13 @@ function Home() {
 			}
 			content={
 				<div className="p-24">
-					<h4>Content</h4>
+					<h4>Comprar</h4>
 					<br />
-					<p>Aqui va el contenido</p>
+					<p>Aqu&iacute; se mostrar&aacute;n las propiedades a vender.......</p>
 				</div>
 			}
 		/>
 	);
 }
 
-export default Home;
+export default Property;
