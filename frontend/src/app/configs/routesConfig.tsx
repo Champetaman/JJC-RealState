@@ -29,7 +29,7 @@ const routes: FuseRoutesType = [
 	...FuseUtils.generateRoutesFromConfigs(routeConfigs, settingsConfig.defaultAuth),
 	{
 		path: '/buy',
-		element: <Navigate to="/property" />,
+		element: <Navigate to="/buy" />,
 		auth: settingsConfig.defaultAuth
 	},
 	{

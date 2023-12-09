@@ -1,8 +1,10 @@
 import { useTranslation } from 'react-i18next';
 import { styled } from '@mui/material/styles';
-import FusePageCarded from '@fuse/core/FusePageCarded';
+import FusePageSimple from '@fuse/core/FusePageSimple';
+import PropertyMap from './PropertyMap';
+import PropertyCards from './PropertyCards';
 
-const Root = styled(FusePageCarded)(({ theme }) => ({
+const Root = styled(FusePageSimple)(({ theme }) => ({
 	'& .FusePageSimple-header': {
 		backgroundColor: theme.palette.background.paper,
 		borderBottomWidth: 1,
@@ -29,8 +31,13 @@ function Property() {
 					<h4>Comprar</h4>
 					<br />
 					<p>Aqu&iacute; se mostrar&aacute;n las propiedades a vender.......</p>
+					<PropertyCards />
 				</div>
 			}
+			rightSidebarContent={<PropertyMap />}
+			rightSidebarOpen
+			rightSidebarVariant="permanent"
+			rightSidebarWidth={800}
 		/>
 	);
 }
