@@ -134,7 +134,7 @@ export const themesConfig: FuseThemesType = {
 			},
 			secondary: {
 				light: '#ffecc0',
-				main: '#FFBE2C',
+				main: '#FFB613',
 				dark: '#ff9910',
 				contrastText: lightPaletteText.primary
 			},

@@ -3,52 +3,37 @@ import FuseLoading from '@fuse/core/FuseLoading';
 import { Navigate } from 'react-router-dom';
 import settingsConfig from 'app/configs/settingsConfig';
 import { FuseRouteConfigsType, FuseRoutesType } from '@fuse/utils/FuseUtils';
-import SignInConfig from '../main/sign-in/SignInConfig';
-import SignUpConfig from '../main/sign-up/SignUpConfig';
-import SignOutConfig from '../main/sign-out/SignOutConfig';
-import Error404Page from '../main/404/Error404Page';
 import ExampleConfig from '../main/example/ExampleConfig';
-import HomeConfig from '../main/home/HomeConfig';
-import PagesConfigs from '../main/pages/pagesConfigs';
-import PropertyConfig from '../main/propiedad/PropertyConfig';
+import HomeConfig from '../main/jjc/home/HomeConfig';
+import BuyConfig from '../main/jjc/buy/PropertyConfig';
+import pagesConfigs from '../main/pages/pagesConfigs';
 
-const routeConfigs: FuseRouteConfigsType = [
-	PropertyConfig,
-	ExampleConfig,
-	HomeConfig,
-	SignOutConfig,
-	SignInConfig,
-	SignUpConfig,
-	...PagesConfigs
-];
+const routeConfigs: FuseRouteConfigsType = [BuyConfig, ExampleConfig, HomeConfig, ...pagesConfigs];
 
 /**
  * The routes of the application.
  */
+// TODO Ajustar rutas de JJC
 const routes: FuseRoutesType = [
 	...FuseUtils.generateRoutesFromConfigs(routeConfigs, settingsConfig.defaultAuth),
-	{
-		path: '/buy',
-		element: <Navigate to="/buy" />,
-		auth: settingsConfig.defaultAuth
-	},
 	{
 		path: '/',
 		element: <Navigate to="/example" />,
 		auth: settingsConfig.defaultAuth
 	},
 	{
-		path: '/home',
+		path: 'home',
 		element: <Navigate to="/home" />,
+		auth: settingsConfig.defaultAuth
+	},
+	{
+		path: 'buy',
+		element: <Navigate to="/buy" />,
 		auth: settingsConfig.defaultAuth
 	},
 	{
 		path: 'loading',
 		element: <FuseLoading />
-	},
-	{
-		path: '404',
-		element: <Error404Page />
 	},
 	{
 		path: '*',

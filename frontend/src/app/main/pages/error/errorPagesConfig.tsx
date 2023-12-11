@@ -1,5 +1,4 @@
 import { lazy } from 'react';
-import { Navigate } from 'react-router-dom';
 import { FuseRouteConfigType } from '@fuse/utils/FuseUtils';
 
 const Error404Page = lazy(() => import('./Error404Page'));
@@ -16,21 +15,12 @@ const errorPagesConfig: FuseRouteConfigType = {
 	},
 	routes: [
 		{
-			path: 'pages/error',
-			children: [
-				{
-					path: '',
-					element: <Navigate to="404" />
-				},
-				{
-					path: '404',
-					element: <Error404Page />
-				},
-				{
-					path: '500',
-					element: <Error500Page />
-				}
-			]
+			path: '404',
+			element: <Error404Page />
+		},
+		{
+			path: '500',
+			element: <Error500Page />
 		}
 	]
 };

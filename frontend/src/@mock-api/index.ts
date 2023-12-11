@@ -3,6 +3,8 @@ import history from '@history';
 import mock from './mock';
 
 // Import API modules
+import './api/ui/icons-api';
+import './api/help-center-api';
 import './api/auth-api';
 import './api/notifications-api';
 
